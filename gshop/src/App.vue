@@ -6,15 +6,20 @@
 </template>
 
 <script>
+import {mapActions} from 'vuex'
 import FooterGuide from './components/FooterGuide/FooterGuide'
-import {reqFoodTypes} from './api'
+
 
 export default {
-    async mounted(){
-        //测试接口请求函数  一定要连接数据库 npm start
-        const result = await reqFoodTypes()
-        console.log(result)
+    mounted(){
+        //this.$store.dispatch('getAddress')
+        this.getAddress()//先引入map再在methods写入方法 再在这里调用   和上面那个效果一样
     },
+
+    methods:{
+        ...mapActions(['getAddress'])
+    },
+
     components:{
         FooterGuide
     }
