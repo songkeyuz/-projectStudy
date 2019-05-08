@@ -13,7 +13,7 @@ import FooterGuide from './components/FooterGuide/FooterGuide'
 export default {
     mounted(){
         //this.$store.dispatch('getAddress')
-        this.getAddress()//先引入map再在methods写入方法 再在这里调用   和上面那个效果一样
+        this.getAddress()//先引入map再在methods写入方法 再在这里调用 再到MSite里面引入 读取  显示     和上面那个效果一样
     },
 
     methods:{

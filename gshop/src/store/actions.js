@@ -37,10 +37,10 @@ export default {
     },
 
     //异步获取商家列表
-    async getShops({ commit }) {
+    async getShops({ commit, state }) {
         //发送异步ajax请求
         const { longitude, latitude } = state
-        const result = await getShops(longitude, latitude)
+        const result = await reqShops(longitude, latitude)
         //提交一个mutation
         if (result.code === 0) {
             const shops = result.data
