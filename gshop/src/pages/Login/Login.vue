@@ -26,7 +26,7 @@
                 <input type="tel" maxlength="8" placeholder="验证码" v-model="code">
               </section>
               <section class="login_hint">
-                温馨提示：未注册硅谷外卖帐号的手机号，登录时将自动注册，且代表已同意
+                温馨提示：未注册神马外卖帐号的手机号，登录时将自动注册，且代表已同意
                 <a href="javascript:;">《用户服务协议》</a>
               </section>
             </div>
@@ -49,7 +49,12 @@
                 </section>
                 <section class="login_message">
                   <input type="text" maxlength="11" placeholder="验证码" v-model="captcha">
-                  <img class="get_verification" src="./images/captcha.svg" alt="captcha">
+                  <img
+                    class="get_verification"
+                    src="http://localhost:4000/captcha"
+                    alt="captcha"
+                    @click="getCaptcha"
+                  >
                 </section>
               </section>
             </div>
@@ -136,8 +141,14 @@ export default {
         }
       }
     },
+    //关闭警告框
     closeTip() {
       (this.alertText = ""), (this.alertShow = false);
+    },
+    //刷新图片验证码
+    getCaptcha(event) {
+      //每次指定的src要不一样
+      event.target.src = "http://localhost:4000/captcha?time=" + Date.now();
     }
   },
   components: {

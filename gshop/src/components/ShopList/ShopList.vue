@@ -11,7 +11,7 @@
           </div>
           <div class="shop_right">
             <section class="shop_detail_header">
-              <h4 class="shop_title ellipsis">{{shop.name}}}</h4>
+              <h4 class="shop_title ellipsis">{{shop.name}}</h4>
               <ul class="shop_detail_ul">
                 <li
                   class="supports"
@@ -27,7 +27,7 @@
                 <div class="order_section">月售{{shop.recent_order_num}}单</div>
               </section>
               <section class="shop_rating_order_right">
-                <span class="delivery_style delivery_right">{{shop.delivery_mode.text}}</span>
+                <span class="delivery_style delivery_right">神马{{(shop.delivery_mode.text).substring(2,4)}}</span>
               </section>
             </section>
             <section class="shop_distance">
@@ -58,6 +58,7 @@ export default {
     return {
       baseImgUrl: "http://cangdu.org:8001/img/"
     };
+    
   },
   computed: {
     ...mapState(["shops"])
