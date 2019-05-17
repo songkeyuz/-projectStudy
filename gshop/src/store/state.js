@@ -11,6 +11,6 @@ export default {
     ratings: [], // 商 家 评 价 列 表 
     info: {}, // 商 家 信 息
     cartFoods:[], //购物车中食物的列表
-    
+    searchShops:[] //搜索得到的商家列表
 
 }

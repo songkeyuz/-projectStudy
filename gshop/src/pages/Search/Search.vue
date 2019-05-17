@@ -2,15 +2,15 @@
 <template>
   <section class="search">
     <HeaderTop title="搜索"/>
-    <form class="search_form">
-      <input type="search" placeholder="请输入商家名称" class="search_input">
+    <form class="search_form" @submit.prevent="search">
+      <input type="search" placeholder="请输入商家名称" class="search_input" v-model="keyword">
       <input type="submit" class="search_submit">
     </form>
     <section class="list">
       <ul class="list_container">
         <li class="list_li">
           <section class="item_left">
-            <img src="http://cangdu.org:8001/img/16265a70fe27854.jpg" class="restaurant_img">
+            <img src="https://fuss10.elemecdn.com/8/40/02872ce8aefe75c16d3190e75ad61jpeg.jpeg" class="restaurant_img">
           </section>
           <section class="item_right">
             <div class="item_right_text">
@@ -24,7 +24,7 @@
         </li>
         <li class="list_li">
           <section class="item_left">
-            <img src="http://cangdu.org:8001/img/16265a70fe27854.jpg" class="restaurant_img">
+            <img src="https://fuss10.elemecdn.com/8/40/02872ce8aefe75c16d3190e75ad61jpeg.jpeg" class="restaurant_img">
           </section>
           <section class="item_right">
             <div class="item_right_text">
@@ -45,6 +45,22 @@
 <script>
 import HeaderTop from "../../components/HeaderTop/HeaderTop";
 export default {
+  data() {
+    return {
+      keyword: ""
+    };
+  },
+
+  methods: {
+    search() {
+      //得到搜索关键字
+      const keyword = this.keyword.trim();
+      //进行搜索
+      if (keyword) {
+        this.$store.dispatch("searchShops", keyword);
+      }
+    }
+  },
   components: {
     HeaderTop
   }
