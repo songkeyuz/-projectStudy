@@ -7,4 +7,10 @@ export default {
     categorys: [], // 分 类 数 组 
     shops: [], // 商 家 数 组
     userInfo:{},//用户信息
+    goods: [], //商 品 列 表 
+    ratings: [], // 商 家 评 价 列 表 
+    info: {}, // 商 家 信 息
+    cartFoods:[], //购物车中食物的列表
+    
+
 }

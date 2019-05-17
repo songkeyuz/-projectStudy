@@ -28,3 +28,10 @@ export const reqUserInfo = () => ajax(BASE_URL + '/userinfo')
 //10、用户登出
 export const reqLogOut = () => ajax(BASE_URL + '/logout')
 
+
+//获 取 商 家 信 息 
+export const reqShopInfo = () => ajax('/info')
+//获 取 商 家 评 价 数 组
+export const reqShopRatings = () => ajax('/ratings')
+//获 取 商 家 商 品 数 组
+export const reqShopGoods = () => ajax('/goods')

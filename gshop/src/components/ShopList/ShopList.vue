@@ -2,7 +2,7 @@
   <div class="shop_container">
     <!-- 图片数据未加载时  显示默认图片 -->
     <ul class="shop_list" v-if="shops.length">
-      <li class="shop_li border-1px" v-for="(shop,index) in shops" :key="index">
+      <li class="shop_li border-1px" v-for="(shop,index) in shops" :key="index" @click="$router.push('/shop')">
         <a>
           <div class="shop_left">
             <!-- 图片网址已经找不到了 -->
